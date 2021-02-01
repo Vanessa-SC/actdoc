@@ -1,0 +1,9 @@
+
+	**** Sistema web para la Coordinación de Actualización Docente ****
+
+	DATOS:
+		
+		USUARIO ADMINISTRADOR:
+			
+			RFC: ADMINISTRADOR-ITD
+			Contraseña: admin
