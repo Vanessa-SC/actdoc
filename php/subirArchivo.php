@@ -27,7 +27,7 @@ if (!empty($_FILES['archivo'])) {
             //Nuevo nombre del archivo
             $archivo = 'doc' . time() . '.' . $ext;
             //Directorio destino
-            $location = 'c://xampp/htdocs/actdoc/files/';
+            $location = '../files/';
             // Subida (movida) del archivo al directorio destino
             move_uploaded_file($_FILES['archivo']['tmp_name'], $location . $archivo);
 
