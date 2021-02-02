@@ -14,15 +14,15 @@
     <div class="border-bottom border-dark mb-4"></div>
     <div class="d-flex h-75">
         <div>
-            <img src="http://desarrollo.itdurango.edu.mx/images/Logo%20ITD.png" class="logoITD" alt="">
+            <img src="images/Logo%20ITD.png" class="logoITD" alt="">
         </div>
         <div class="d-flex mx-auto pt-4" ng-repeat="x in constancia">
             
             <div class="embed embed-responsive-16by9">
-                <object data="http://desarrollo.itdurango.edu.mx/files/{{x.rutaConstancia}}" width="900" height="400" type="text/html" class="embed-responsive-item">
+                <object data="files/{{x.rutaConstancia}}" width="900" height="400" type="text/html" class="embed-responsive-item">
                     El documento no pudo ser cargado, pero puede descargarlo con el siguiente botón <br>
                     <a class="btn text-white btn-warning"
-                        href="http://desarrollo.itdurango.edu.mx/files/{{x.rutaConstancia}}" target="_blank">Descargar
+                        href="files/{{x.rutaConstancia}}" target="_blank">Descargar
                         documento</a>
                 </object>
             </div>

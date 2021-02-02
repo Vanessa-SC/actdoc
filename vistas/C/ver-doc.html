@@ -6,7 +6,7 @@
             <div class="pt-3 d-flex mx-auto">
                 <button title="Regresar a la página anterior" class="btn-back back_icon px-auto" ng-click="back()">
                 </button>
-                <img src="http://desarrollo.itdurango.edu.mx/images/Logo%20ITD.png" class="logoITD">
+                <img src="images/Logo%20ITD.png" class="logoITD">
 
                 <h1 style="align-self: center;">Documento: {{doc.nombreDocumento}}</h1>
 
@@ -17,7 +17,7 @@
         <div class="embed-responsive embed-responsive-16by9">
             <object data="{{getDocumento(doc.rutaArchivo)}}" width="400" height="300" type="text/html">
                 El documento no pudo ser cargado, pero puede descargarlo con el siguiente botón <br>
-                <a class="btn text-white btn-warning" href="http://desarrollo.itdurango.edu.mx/files/{{doc.rutaArchivo}}"
+                <a class="btn text-white btn-warning" href="files/{{doc.rutaArchivo}}"
                     target="_blank">Descargar documento</a>
             </object>
         </div>
