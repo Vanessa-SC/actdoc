@@ -99,7 +99,7 @@ foreach ($participantes as list($id, $nombre)) {
     // Nombre del PDF C_+ marca de tiempo + extension
     $archivo = 'C_' . time() . $id . '.pdf';
     // Salida del archivo -> mostrar en el navegador para su visualizar o descargar
-    $pdf->Output("C:/xampp/htdocs/actdoc/files/" . $archivo, 'F');
+    $pdf->Output("../files/" . $archivo, 'F');
 
     //Query para determinar si ya se ha subido un documento previamente
     $query = "SELECT * FROM constancia
@@ -180,7 +180,7 @@ $pdfR->SetFont('Montserrat', '', 11);
 $pdfR->Cell(0, 10, $folio.'          '. utf8_decode(mb_strtoupper($ClaveRegistro.'-'.str_pad($contador, 2, "0", STR_PAD_LEFT),'utf-8')), 0, 0, 'C');
 $archivo = 'R_' . time() . '.pdf';
 
-$pdfR->Output("C:/xampp/htdocs/actdoc/files/" . $archivo, 'F');
+$pdfR->Output("../files/" . $archivo, 'F');
 
 //Query para determinar si ya se ha subido un documento previamente
 $queryi = "SELECT * FROM constancia

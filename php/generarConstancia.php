@@ -55,7 +55,7 @@ $pdf->SetAutoPageBreak(false);
 // Agregar página
 $pdf->AddPage();
 // Background
-$pdf->Image('C:\xampp\htdocs\Residencia\ActualizacionDocente\FPDF\CONSTANCIA.jpg', 0, 0, 220);
+$pdf->Image('..\FPDF\CONSTANCIA.jpg', 0, 0, 220);
 $pdf->Ln(50);
 // Tipografía
 $pdf->AddFont('Montserrat','','montserrat.php');
@@ -82,7 +82,7 @@ $pdf->MultiCell(0, 0, strtoupper('Victoria de Durango, Dgo. a ' . $datos->fechaF
 // Nombre del PDF C_+ marca de tiempo + extension
 $archivo = 'C_' . time() . '.pdf';
 // Salida del archivo -> mostrar en el navegador para su visualizar o descargar
-$pdf->Output("C:/xampp/htdocs/actdoc/files/" . $archivo, 'F');
+$pdf->Output("../files/" . $archivo, 'F');
 
 //Query para determinar si ya se ha subido un documento previamente
 $query = "SELECT * FROM constancia
