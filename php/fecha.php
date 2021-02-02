@@ -1,5 +1,7 @@
 <?php
 
+
+header('Access-Control-Allow-Origin: *');
 /* Retorna la fecha actual */
 
 // Establecimiento de zona horaria
