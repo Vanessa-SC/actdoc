@@ -952,7 +952,7 @@ app.service('periodoService', function ($q, $http) {
 		getPeriodo: function () {
 			return $http({
 				method: 'GET',
-				url: 'desarrollo.itdurango.edu.mx/php/periodoActual.php'
+				url: 'http://desarrollo.itdurango.edu.mx/php/periodoActual.php'
 			}).then(function successCallback(response) {
 				return response.data.periodo;
 			}, function errorCallback(response) {
@@ -968,7 +968,7 @@ app.service('fechaService', function ($q, $http) {
 		getFecha: function () {
 			return $http({
 				method: 'GET',
-				url: 'desarrollo.itdurango.edu.mx/php/fecha.php'
+				url: 'http://desarrollo.itdurango.edu.mx/php/fecha.php'
 			}).then(function successCallback(response) {
 				return response.data.fecha;
 			}, function errorCallback(response) {
@@ -985,7 +985,7 @@ app.service('asistenciaService', function ($http, $q) {
 		existe: function (idc) {
 			return $http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/getRegistroAsistenciaCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getRegistroAsistenciaCurso.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -1005,7 +1005,7 @@ app.service('encuestaService', function ($http, $q) {
 		existe: function (idc, idu, ide) {
 			return $http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/getRegistroEncuestaUsuarioCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getRegistroEncuestaUsuarioCurso.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -1194,7 +1194,7 @@ app.controller('loginCtrl', function ($scope, $http, $location, user, $timeout) 
 
 		/* Peticion HTTP para consultar usuario y contraseña */
 		$http({
-				url: 'desarrollo.itdurango.edu.mx/server.php',
+				url: 'http://desarrollo.itdurango.edu.mx/server.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -1249,7 +1249,7 @@ app.controller('loginCtrl', function ($scope, $http, $location, user, $timeout) 
 				};
 				$http({
 					method: 'POST',
-					url: 'desarrollo.itdurango.edu.mx/php/changePassword.php',
+					url: 'http://desarrollo.itdurango.edu.mx/php/changePassword.php',
 					headers: {
 						'Content-type': 'json/application'
 					},
@@ -1312,7 +1312,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 	$scope.getCursos = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getCursos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getCursos.php'
 		}).then(function successCallback(response) {
 			$scope.cursos = response.data;
 		});
@@ -1322,7 +1322,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 	$scope.getDepartamentos = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getDepartamentos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getDepartamentos.php'
 		}).then(function successCallback(response) {
 			$scope.dptos = response.data;
 		});
@@ -1332,7 +1332,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 	$scope.getInstructores = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getInstructores.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getInstructores.php'
 		}).then(function successCallback(response) {
 			$scope.instructor = response.data;
 		});
@@ -1348,7 +1348,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 	$scope.getListaDocumentosCurso = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getDocumentos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getDocumentos.php'
 		}).then(function successCallback(response) {
 			$scope.documentos = response.data;
 		}, function errorCallback(response) {
@@ -1365,7 +1365,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 				/* Peticion HTTP */
 				$http({
 					method: 'POST',
-					url: 'desarrollo.itdurango.edu.mx/php/getDocsCurso.php',
+					url: 'http://desarrollo.itdurango.edu.mx/php/getDocsCurso.php',
 					headers: {
 						'Content-Type': 'application/x-www-form-urlencoded'
 					},
@@ -1410,7 +1410,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 		/* Validar que no esté vacío */
 		if ($scope.idCurso != "") {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getInfoCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getInfoCurso.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -1427,7 +1427,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 		$scope.idCurso = curso.getID();
 		if ($scope.idCurso != "") {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getCursoAct.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getCursoAct.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -1465,7 +1465,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 		var idDoc = curso.getIDdocumento();
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/getDocumentosCurso.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getDocumentosCurso.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -1477,7 +1477,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 
 	/* Retorna el link del documento */
 	$scope.getDocumento = function (doc) {
-		return 'desarrollo.itdurango.edu.mx/files/' + doc;
+		return 'http://desarrollo.itdurango.edu.mx/files/' + doc;
 	};
 
 	/* Función para la creación de un curso */
@@ -1504,7 +1504,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 			/* Envía los datos del formulario */
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/crearCursoC.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/crearCursoC.php',
 				headers: {
 					'Content-Type': 'application/json'
 				},
@@ -1557,7 +1557,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 	$scope.actualizarCurso = function (datos) {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/actualizarCursoC.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/actualizarCursoC.php',
 			headers: {
 				'Content-Type': 'application/json'
 			},
@@ -1595,7 +1595,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 	$scope.deleteCurso = function (id) {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/deleteCurso.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/deleteCurso.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -1646,7 +1646,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 		/* Envío de los datos */
 		$http({
 			method: 'post',
-			url: 'desarrollo.itdurango.edu.mx/php/subirArchivo.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/subirArchivo.php',
 			data: fd,
 			headers: {
 				'Content-Type': undefined
@@ -1666,7 +1666,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 
 				$('#modal' + idDoc).modal('hide');
 				document.getElementById('mensaje' + idDoc).innerHTML = 'Documento guardado';
-				$('#linkDocumento' + idDoc).replaceWith('<span id="linkDocumento' + idDoc + '"><a href="desarrollo.itdurango.edu.mx/files/' + response.data.doc + '" target="_blank">Ver documento</a></span>');
+				$('#linkDocumento' + idDoc).replaceWith('<span id="linkDocumento' + idDoc + '"><a href="http://desarrollo.itdurango.edu.mx/files/' + response.data.doc + '" target="_blank">Ver documento</a></span>');
 			}
 		}, function errorCallback(response) {
 			/* Si falla intenta subirlo de nuevo */
@@ -1681,7 +1681,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 		$timeout(function () {
 			$http({
 				method: 'post',
-				url: 'desarrollo.itdurango.edu.mx/php/documentosExistentesCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/documentosExistentesCurso.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -1689,7 +1689,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 			}).then(function successCallback(response) {
 				if (response.data.status = "existe") {
 					angular.forEach(response.data.documentos, function (value, key) {
-						$('#linkDocumento' + key).append('<a target="_blank" href="desarrollo.itdurango.edu.mx/files/' + value + '">Ver documento</a>');
+						$('#linkDocumento' + key).append('<a target="_blank" href="http://desarrollo.itdurango.edu.mx/files/' + value + '">Ver documento</a>');
 					});
 				}
 			});
@@ -1703,7 +1703,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 		if (documento.comentario != undefined) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/addComentario.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/addComentario.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -1727,7 +1727,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 			}
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/getNuevoFolio.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getNuevoFolio.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -1740,7 +1740,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 
 	/* Pasa los datos GET para obtener el oficio de creación de un curso */
 	$scope.printOficio = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getOficioRegistro.php?idc=' + $scope.infoCurso.idCurso, '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getOficioRegistro.php?idc=' + $scope.infoCurso.idCurso, '_blank');
 	}
 
 	/* valida si hay cursos a los que les falta documentación,
@@ -1750,7 +1750,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 		$timeout(function () {
 			$http({
 				method: 'GET',
-				url: 'desarrollo.itdurango.edu.mx/php/numDocsCursos.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/numDocsCursos.php',
 			}).then(function successCallback(response) {
 				angular.forEach(response.data.numDocsCurso, function (value, key) {
 					if (value.num_docs < 7) {
@@ -1766,7 +1766,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 		if (curso.getID() != undefined) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/validarDocumentoCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/validarDocumentoCurso.php',
 				headers: {
 					'Content-type': 'application/x-www-form-urlencoded'
 				},
@@ -1806,7 +1806,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 			$timeout(function () {
 				$http({
 					method: 'POST',
-					url: 'desarrollo.itdurango.edu.mx/php/getValidacionDocumentos.php',
+					url: 'http://desarrollo.itdurango.edu.mx/php/getValidacionDocumentos.php',
 					headers: {
 						'Content-type': 'application/x-www-form-urlencoded'
 					},
@@ -1831,7 +1831,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 					if (response.data.docs_status == 'invalidos' && $scope.infoCurso.validado == 'SI') {
 						$http({
 							method: 'POST',
-							url: 'desarrollo.itdurango.edu.mx/php/validarCurso.php',
+							url: 'http://desarrollo.itdurango.edu.mx/php/validarCurso.php',
 							headers: {
 								'Content-type': 'application/x-www-form-urlencoded'
 							},
@@ -1854,7 +1854,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 			$timeout(function () {
 				$http({
 					method: 'POST',
-					url: 'desarrollo.itdurango.edu.mx/php/validarCurso.php',
+					url: 'http://desarrollo.itdurango.edu.mx/php/validarCurso.php',
 					headers: {
 						'Content-type': 'application/x-www-form-urlencoded'
 					},
@@ -1878,23 +1878,23 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 	//Formatos
 	/* Archivo excel de Indicadores Totales por cursos */
 	$scope.printIndicadores = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadores.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadores.php?', '_blank');
 	}
 
 	/* Archivo excel de Indicadores Totales */
 	$scope.printIndicadoresTotales = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresTotales.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresTotales.php?', '_blank');
 	}
 
 	/* Archivo word de Programa Institucional */
 	$scope.printProgramaInstitucional = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucional.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucional.php?', '_blank');
 	}
 
 	/*Obtiene plantilla de Ficha Técnica del Servicio */
 	$scope.printFicha = function () {
 		$scope.id = curso.getID();
-		window.open('desarrollo.itdurango.edu.mx/php/getFichaTecnica.php?id=' + $scope.id, '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFichaTecnica.php?id=' + $scope.id, '_blank');
 	}
 });
 
@@ -1909,7 +1909,7 @@ app.controller('programasCtrl', function ($scope, $http, user, curso, periodoSer
 	/* Realizar la modificación de los datos del departamento */
 	$scope.activarEncuesta = function (data) {
 		$http({
-			url: 'desarrollo.itdurango.edu.mx/php/activarEncuesta.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/activarEncuesta.php',
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -1943,7 +1943,7 @@ app.controller('programasCtrl', function ($scope, $http, user, curso, periodoSer
 	$scope.getPeriodos2 = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getPeriodos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getPeriodos.php'
 		}).then(function successCallback(response) {
 			$scope.periodosEnc = response.data;
 		});
@@ -1953,7 +1953,7 @@ app.controller('programasCtrl', function ($scope, $http, user, curso, periodoSer
 	$scope.getTodosLosCursos = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getTodosLosCursos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getTodosLosCursos.php'
 		}).then(function successCallback(response) {
 			$scope.TodosCursos = response.data;
 		});
@@ -1962,7 +1962,7 @@ app.controller('programasCtrl', function ($scope, $http, user, curso, periodoSer
 	/** Obtener listado de los cursos del periodo seleccionado */
 	$scope.getCursosDelPeriodo = function (periodo) {
 		$http({
-			url: 'desarrollo.itdurango.edu.mx/php/getCursosPorPeriodo.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getCursosPorPeriodo.php',
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
@@ -1986,7 +1986,7 @@ app.controller('programasCtrl', function ($scope, $http, user, curso, periodoSer
 		if (curso.getID != undefined) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/getAsistenciaCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getAsistenciaCurso.php',
 				headers: {
 					'Content-type': 'application/x-www-form-urlencoded'
 				},
@@ -2000,7 +2000,7 @@ app.controller('programasCtrl', function ($scope, $http, user, curso, periodoSer
 		/* Abre el Formato de Lista de Asistencia curso en otra pestaña */
 		$scope.printFormato = function () {
 			$scope.idCurso = curso.getID();
-			window.open('desarrollo.itdurango.edu.mx/php/getFormatoListaAsistencia.php?idc=' + $scope.idCurso, '_blank');
+			window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoListaAsistencia.php?idc=' + $scope.idCurso, '_blank');
 		}
 	}
 
@@ -2008,7 +2008,7 @@ app.controller('programasCtrl', function ($scope, $http, user, curso, periodoSer
 	$scope.getPeriodos = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getPeriodos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getPeriodos.php'
 		}).then(function successCallback(response) {
 			$scope.periodos = response.data;
 			$scope.periodos.unshift({
@@ -2020,17 +2020,17 @@ app.controller('programasCtrl', function ($scope, $http, user, curso, periodoSer
 	//Formatos
 	/* Archivo excel de indicadores */
 	$scope.printIndicadores = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadores.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadores.php?', '_blank');
 	}
 
 	/* Archivo excel de Indicadores Totales */
 	$scope.printIndicadoresTotales = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresTotales.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresTotales.php?', '_blank');
 	}
 
 	/* Archivo word de Programa Institucional */
 	$scope.printProgramaInstitucional = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucional.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucional.php?', '_blank');
 	}
 });
 
@@ -2041,7 +2041,7 @@ app.controller('constanciasCtrl', function ($scope, $http, user, periodoService,
 	$scope.getConstancias = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getConstancias.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getConstancias.php'
 		}).then(function successCallback(response) {
 			$scope.constancias = response.data;
 		});
@@ -2060,7 +2060,7 @@ app.controller('constanciasCtrl', function ($scope, $http, user, periodoService,
 	$scope.getPeriodos = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getPeriodos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getPeriodos.php'
 		}).then(function successCallback(response) {
 			$scope.periodos = response.data;
 		});
@@ -2073,7 +2073,7 @@ app.controller('constanciasCtrl', function ($scope, $http, user, periodoService,
 			.then(function (response) {
 				$scope.periodoActual = response;
 				$http({
-					url: 'desarrollo.itdurango.edu.mx/php/getConstanciasPeriodoActual.php',
+					url: 'http://desarrollo.itdurango.edu.mx/php/getConstanciasPeriodoActual.php',
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
@@ -2088,7 +2088,7 @@ app.controller('constanciasCtrl', function ($scope, $http, user, periodoService,
 	/** Obtener listado de los cursos del periodo seleccionado */
 	$scope.getCursosDelPeriodo = function (periodo) {
 		$http({
-			url: 'desarrollo.itdurango.edu.mx/php/getCursosPorPeriodo.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getCursosPorPeriodo.php',
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
@@ -2103,7 +2103,7 @@ app.controller('constanciasCtrl', function ($scope, $http, user, periodoService,
 	$scope.cursoSeleccionado = function (curso) {
 		if (curso != undefined) {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getParticipantesAprobados.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getParticipantesAprobados.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -2140,7 +2140,7 @@ app.controller('constanciasCtrl', function ($scope, $http, user, periodoService,
 		var folio = constancia.getFolio();
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/getConstancia.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getConstancia.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -2152,7 +2152,7 @@ app.controller('constanciasCtrl', function ($scope, $http, user, periodoService,
 
 	/* Retorna la URL del documento */
 	$scope.getDocumento = function () {
-		return 'desarrollo.itdurango.edu.mx/files/' + constancia.getRuta();
+		return 'http://desarrollo.itdurango.edu.mx/files/' + constancia.getRuta();
 	};
 
 	$scope.back = function () {
@@ -2180,7 +2180,7 @@ app.controller('constanciasCtrl', function ($scope, $http, user, periodoService,
 				/* Manda el json  */
 				$http({
 					method: 'POST',
-					url: 'desarrollo.itdurango.edu.mx/php/generarConstancia.php',
+					url: 'http://desarrollo.itdurango.edu.mx/php/generarConstancia.php',
 					headers: {
 						'Content-Type': 'application/json'
 					},
@@ -2225,7 +2225,7 @@ app.controller('constanciasCtrl', function ($scope, $http, user, periodoService,
 				}
 				$http({
 					method: 'POST',
-					url: 'desarrollo.itdurango.edu.mx/php/generarConstanciasCurso.php',
+					url: 'http://desarrollo.itdurango.edu.mx/php/generarConstanciasCurso.php',
 					headers: {
 						'Content-Type': 'application/json'
 					},
@@ -2270,17 +2270,17 @@ app.controller('constanciasCtrl', function ($scope, $http, user, periodoService,
 	//Formatos
 	/* Archivo excel de indicadores */
 	$scope.printIndicadores = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadores.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadores.php?', '_blank');
 	}
 
 	/* Archivo excel de Indicadores Totales */
 	$scope.printIndicadoresTotales = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresTotales.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresTotales.php?', '_blank');
 	}
 
 	/* Archivo word de Programa Institucional */
 	$scope.printProgramaInstitucional = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucional.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucional.php?', '_blank');
 	}
 
 	/* Datos que serán usados en la vista */
@@ -2328,7 +2328,7 @@ app.controller('instructoresCtrl', function ($scope, $http, $location, user, per
 	$scope.getInstructores = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getInstructores.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getInstructores.php'
 		}).then(function successCallback(response) {
 			$scope.instructores = response.data;
 		});
@@ -2340,7 +2340,7 @@ app.controller('instructoresCtrl', function ($scope, $http, $location, user, per
 	$scope.getDepartamentos = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getDepartamentos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getDepartamentos.php'
 		}).then(function successCallback(response) {
 			$scope.dptos = response.data;
 		});
@@ -2366,7 +2366,7 @@ app.controller('instructoresCtrl', function ($scope, $http, $location, user, per
 		) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/agregarInstructor.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/agregarInstructor.php',
 				headers: {
 					'Content-Type': 'application/json'
 				},
@@ -2418,7 +2418,7 @@ app.controller('instructoresCtrl', function ($scope, $http, $location, user, per
 	$scope.deleteInstructor = function (id, nombreInstructor) {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/deleteInstructor.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/deleteInstructor.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -2462,7 +2462,7 @@ app.controller('instructoresCtrl', function ($scope, $http, $location, user, per
 		/* Valida que el ID no esté vacío */
 		if (instructor.getID() != "") {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getInstructorAct.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getInstructorAct.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -2479,7 +2479,7 @@ app.controller('instructoresCtrl', function ($scope, $http, $location, user, per
 	$scope.actualizarInstructor = function () {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/actualizarInstructor.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/actualizarInstructor.php',
 			headers: {
 				'Content-Type': 'application/json'
 			},
@@ -2513,17 +2513,17 @@ app.controller('instructoresCtrl', function ($scope, $http, $location, user, per
 	//Formatos
 	/* Archivo excel de indicadores */
 	$scope.printIndicadores = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadores.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadores.php?', '_blank');
 	}
 
 	/* Archivo excel de Indicadores Totales */
 	$scope.printIndicadoresTotales = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresTotales.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresTotales.php?', '_blank');
 	}
 
 	/* Archivo word de Programa Institucional */
 	$scope.printProgramaInstitucional = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucional.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucional.php?', '_blank');
 	}
 });
 
@@ -2534,7 +2534,7 @@ app.controller('encuestasCtrl', function ($scope, $http, user, periodoService, c
 	$scope.getEncuestasCurso = function () {
 		if (curso.getID() != undefined) {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getEncuestasCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getEncuestasCurso.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -2556,7 +2556,7 @@ app.controller('encuestasCtrl', function ($scope, $http, user, periodoService, c
 		if (ide != undefined) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/getPreguntasEncuesta.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getPreguntasEncuesta.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -2577,7 +2577,7 @@ app.controller('encuestasCtrl', function ($scope, $http, user, periodoService, c
 		if (ide != undefined) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/getResultadosEncuesta.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getResultadosEncuesta.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -2620,22 +2620,22 @@ app.controller('encuestasCtrl', function ($scope, $http, user, periodoService, c
 	//Formatos
 	/* Archivo excel de indicadores */
 	$scope.printIndicadores = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadores.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadores.php?', '_blank');
 	}
 
 	/* Archivo excel de Indicadores Totales */
 	$scope.printIndicadoresTotales = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresTotales.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresTotales.php?', '_blank');
 	}
 
 	/* Archivo word de Programa Institucional */
 	$scope.printProgramaInstitucional = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucional.php?', '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucional.php?', '_blank');
 	}
 
 	$scope.exportarResultados = function () {
 		if (curso.getID() != undefined && encuesta.getID() != undefined) {
-			window.open('desarrollo.itdurango.edu.mx/php/getFormatoResultadosEncuesta.php?ide=' + encuesta.getID() + '&idc=' + curso.getID(), '_blank');
+			window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoResultadosEncuesta.php?ide=' + encuesta.getID() + '&idc=' + curso.getID(), '_blank');
 		}
 	}
 
@@ -2650,7 +2650,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 	$scope.getCursos = function () {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/getCursosDepartamento.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getCursosDepartamento.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -2665,7 +2665,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 		$scope.idCurso = curso.getID();
 		if ($scope.idCurso != "") {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getInfoCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getInfoCurso.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -2686,7 +2686,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 	$scope.getListaDocumentosCurso = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getDocumentos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getDocumentos.php'
 		}).then(function successCallback(response) {
 			$scope.documentos = response.data;
 		});
@@ -2701,7 +2701,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 				/* Peticion HTTP */
 				$http({
 					method: 'POST',
-					url: 'desarrollo.itdurango.edu.mx/php/getDocsCurso.php',
+					url: 'http://desarrollo.itdurango.edu.mx/php/getDocsCurso.php',
 					headers: {
 						'Content-Type': 'application/x-www-form-urlencoded'
 					},
@@ -2741,7 +2741,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 		if (documento.comentario != undefined) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/addComentario.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/addComentario.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -2760,7 +2760,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 		$timeout(function () {
 			$http({
 				method: 'post',
-				url: 'desarrollo.itdurango.edu.mx/php/documentosExistentesCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/documentosExistentesCurso.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -2768,7 +2768,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 			}).then(function successCallback(response) {
 				if (response.data.status = "existe") {
 					angular.forEach(response.data.documentos, function (value, key) {
-						$('#linkDocumento' + key).append('<a target="_blank" href="desarrollo.itdurango.edu.mx/files/' + value + '">Ver documento</a>');
+						$('#linkDocumento' + key).append('<a target="_blank" href="http://desarrollo.itdurango.edu.mx/files/' + value + '">Ver documento</a>');
 					});
 				}
 			});
@@ -2804,7 +2804,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 		) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/crearCursoJ.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/crearCursoJ.php',
 				headers: {
 					'Content-Type': 'application/json'
 				},
@@ -2851,7 +2851,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 	$scope.actualizarCurso = function (datos) {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/actualizarCursoJ.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/actualizarCursoJ.php',
 			headers: {
 				'Content-Type': 'application/json'
 			},
@@ -2887,7 +2887,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 		$scope.idCurso = curso.getID();
 		if ($scope.idCurso != "") {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getCursoAct.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getCursoAct.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -2916,7 +2916,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 	$scope.deleteCurso = function (id, nombreCurso) {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/deleteCurso.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/deleteCurso.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -2955,7 +2955,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 	$scope.getDepartamento = function () {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/getDepartamento.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getDepartamento.php',
 			headers: {
 				'Content-type': 'application/x-www-form-urlencoded'
 			},
@@ -2970,7 +2970,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 	$scope.getInstructores = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getInstructores.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getInstructores.php'
 		}).then(function successCallback(response) {
 			$scope.instructor = response.data;
 			// console.log(response.data);
@@ -2987,7 +2987,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 		// HTTP request
 		$http({
 			method: 'post',
-			url: 'desarrollo.itdurango.edu.mx/php/subirArchivo.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/subirArchivo.php',
 			data: fd,
 			headers: {
 				'Content-Type': undefined
@@ -3004,7 +3004,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 				});
 				$('#modal' + idDoc).modal('hide');
 				document.getElementById('mensaje' + idDoc).innerHTML = 'Documento guardado';
-				$('#linkDocumento' + idDoc).replaceWith('<span id="linkDocumento' + idDoc + '"><a href="desarrollo.itdurango.edu.mx/files/' + response.data.doc + '" target="_blank">Ver documento</a></span>');
+				$('#linkDocumento' + idDoc).replaceWith('<span id="linkDocumento' + idDoc + '"><a href="http://desarrollo.itdurango.edu.mx/files/' + response.data.doc + '" target="_blank">Ver documento</a></span>');
 			}
 		});
 	}
@@ -3014,7 +3014,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 		$timeout(function () {
 			$http({
 				method: 'post',
-				url: 'desarrollo.itdurango.edu.mx/php/documentosExistentesCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/documentosExistentesCurso.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -3022,7 +3022,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 			}).then(function successCallback(response) {
 				if (response.data.status = "existe") {
 					angular.forEach(response.data.documentos, function (value, key) {
-						$('#linkDocumento' + key).append('<a target="_blank" href="desarrollo.itdurango.edu.mx/files/' + value + '">Ver documento</a>');
+						$('#linkDocumento' + key).append('<a target="_blank" href="http://desarrollo.itdurango.edu.mx/files/' + value + '">Ver documento</a>');
 					});
 				}
 			});
@@ -3038,7 +3038,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 		}
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/getNuevoFolioJ.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getNuevoFolioJ.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -3050,7 +3050,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 
 	/* Pasa los datos GET para obtener el oficio de creación de un curso */
 	$scope.printOficio = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getOficioRegistro.php?idc=' + $scope.infoCurso.idCurso, '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getOficioRegistro.php?idc=' + $scope.infoCurso.idCurso, '_blank');
 	}
 
 
@@ -3061,7 +3061,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 		$timeout(function () {
 			$http({
 				method: 'GET',
-				url: 'desarrollo.itdurango.edu.mx/php/numDocsCursos.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/numDocsCursos.php',
 			}).then(function successCallback(response) {
 				angular.forEach(response.data.numDocsCurso, function (value, key) {
 					if (value.num_docs < 7) {
@@ -3077,7 +3077,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 		if (curso.getID() != undefined) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/validarDocumentoCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/validarDocumentoCurso.php',
 				headers: {
 					'Content-type': 'application/x-www-form-urlencoded'
 				},
@@ -3116,7 +3116,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 			$timeout(function () {
 				$http({
 					method: 'POST',
-					url: 'desarrollo.itdurango.edu.mx/php/getValidacionDocumentos.php',
+					url: 'http://desarrollo.itdurango.edu.mx/php/getValidacionDocumentos.php',
 					headers: {
 						'Content-type': 'application/x-www-form-urlencoded'
 					},
@@ -3141,7 +3141,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 					if (response.data.docs_status == 'invalidos' && $scope.infoCurso.validado == 'SI') {
 						$http({
 							method: 'POST',
-							url: 'desarrollo.itdurango.edu.mx/php/validarCurso.php',
+							url: 'http://desarrollo.itdurango.edu.mx/php/validarCurso.php',
 							headers: {
 								'Content-type': 'application/x-www-form-urlencoded'
 							},
@@ -3164,7 +3164,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 			$timeout(function () {
 				$http({
 					method: 'POST',
-					url: 'desarrollo.itdurango.edu.mx/php/validarCurso.php',
+					url: 'http://desarrollo.itdurango.edu.mx/php/validarCurso.php',
 					headers: {
 						'Content-type': 'application/x-www-form-urlencoded'
 					},
@@ -3188,23 +3188,23 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 	//Formatos
 	/* Archivo excel de indicadores */
 	$scope.printIndicadores = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDpto.php?idd=' + user.getIdDepartamento(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDpto.php?idd=' + user.getIdDepartamento(), '_blank');
 	}
 
 	/* Archivo excel de Indicadores Totales */
 	$scope.printIndicadoresTotales = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDptoTotales.php?idd=' + user.getIdDepartamento(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDptoTotales.php?idd=' + user.getIdDepartamento(), '_blank');
 	}
 
 	/* Archivo word de Programa Institucional */
 	$scope.printProgramaInstitucional = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucionalDpto.php?idd=' + user.getIdDepartamento(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucionalDpto.php?idd=' + user.getIdDepartamento(), '_blank');
 	}
 
 	/*Obtiene plantilla de Ficha Técnica del Servicio */
 	$scope.printFicha = function () {
 		$scope.id = curso.getID();
-		window.open('desarrollo.itdurango.edu.mx/php/getFichaTecnica.php?id=' + $scope.id, '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFichaTecnica.php?id=' + $scope.id, '_blank');
 	}
 
 	/* Llamado a las funciones */
@@ -3224,7 +3224,7 @@ app.controller('encuestaJCtrl', function ($scope, $http, $location, user, curso,
 	$scope.getTodosLosCursos = function () {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/getTodosCursosDepartamento.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getTodosCursosDepartamento.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -3237,7 +3237,7 @@ app.controller('encuestaJCtrl', function ($scope, $http, $location, user, curso,
 	/** Obtener listado de los cursos del periodo seleccionado */
 	$scope.getCursosDelPeriodo = function (p) {
 		$http({
-			url: 'desarrollo.itdurango.edu.mx/php/getCursosPorPeriodoDepto.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getCursosPorPeriodoDepto.php',
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
@@ -3262,7 +3262,7 @@ app.controller('encuestaJCtrl', function ($scope, $http, $location, user, curso,
 	$scope.getPeriodos = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getPeriodos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getPeriodos.php'
 		}).then(function successCallback(response) {
 			$scope.periodos = response.data;
 			$scope.periodos.unshift({
@@ -3275,7 +3275,7 @@ app.controller('encuestaJCtrl', function ($scope, $http, $location, user, curso,
 		$scope.idCurso = curso.getID();
 		if ($scope.idCurso != "") {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getInfoCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getInfoCurso.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -3323,7 +3323,7 @@ app.controller('encuestaJCtrl', function ($scope, $http, $location, user, curso,
 		$timeout(function () {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/getFechaEncuesta.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getFechaEncuesta.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -3333,7 +3333,7 @@ app.controller('encuestaJCtrl', function ($scope, $http, $location, user, curso,
 					if (encuesta.getID() != undefined) {
 						$http({
 							method: 'POST',
-							url: 'desarrollo.itdurango.edu.mx/php/getPreguntasEncuesta.php',
+							url: 'http://desarrollo.itdurango.edu.mx/php/getPreguntasEncuesta.php',
 							headers: {
 								'Content-Type': 'application/x-www-form-urlencoded'
 							},
@@ -3370,7 +3370,7 @@ app.controller('encuestaJCtrl', function ($scope, $http, $location, user, curso,
 		if (Object.keys($scope.listaRespuestas).length == ($scope.preguntas).length) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/registrarRespuestasEncuesta.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/registrarRespuestasEncuesta.php',
 				headers: {
 					'Content-type': 'json/application'
 				},
@@ -3406,17 +3406,17 @@ app.controller('encuestaJCtrl', function ($scope, $http, $location, user, curso,
 	//Formatos
 	/* Archivo excel de indicadores */
 	$scope.printIndicadores = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDpto.php?idd=' + user.getIdDepartamento(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDpto.php?idd=' + user.getIdDepartamento(), '_blank');
 	}
 
 	/* Archivo excel de Indicadores Totales */
 	$scope.printIndicadoresTotales = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDptoTotales.php?idd=' + user.getIdDepartamento(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDptoTotales.php?idd=' + user.getIdDepartamento(), '_blank');
 	}
 
 	/* Archivo word de Programa Institucional */
 	$scope.printProgramaInstitucional = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucionalDpto.php?idd=' + user.getIdDepartamento(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucionalDpto.php?idd=' + user.getIdDepartamento(), '_blank');
 	}
 
 
@@ -3427,17 +3427,17 @@ app.controller('instructoresJCtrl', function ($scope, $http, $location, user, pe
 	//Formatos
 	/* Archivo excel de indicadores */
 	$scope.printIndicadores = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDpto.php?idd=' + user.getIdDepartamento(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDpto.php?idd=' + user.getIdDepartamento(), '_blank');
 	}
 
 	/* Archivo excel de Indicadores Totales */
 	$scope.printIndicadoresTotales = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDptoTotales.php?idd=' + user.getIdDepartamento(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDptoTotales.php?idd=' + user.getIdDepartamento(), '_blank');
 	}
 
 	/* Archivo word de Programa Institucional */
 	$scope.printProgramaInstitucional = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucionalDpto.php?idd=' + user.getIdDepartamento(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucionalDpto.php?idd=' + user.getIdDepartamento(), '_blank');
 	}
 
 	$scope.user = user.getName();
@@ -3451,7 +3451,7 @@ app.controller('instructoresJCtrl', function ($scope, $http, $location, user, pe
 	$scope.getInstructores = function () {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/getInstructoresDepartamento.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getInstructoresDepartamento.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -3467,7 +3467,7 @@ app.controller('instructoresJCtrl', function ($scope, $http, $location, user, pe
 	$scope.getDepartamentos = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getDepartamentos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getDepartamentos.php'
 		}).then(function successCallback(response) {
 			$scope.dptos = response.data;
 		});
@@ -3480,7 +3480,7 @@ app.controller('instructoresJCtrl', function ($scope, $http, $location, user, pe
 	$scope.getDepartamento = function () {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/getDepartamento.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getDepartamento.php',
 			headers: {
 				'Content-type': 'application/x-www-form-urlencoded'
 			},
@@ -3530,7 +3530,7 @@ app.controller('instructoresJCtrl', function ($scope, $http, $location, user, pe
 		) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/agregarInstructor.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/agregarInstructor.php',
 				headers: {
 					'Content-Type': 'application/json'
 				},
@@ -3581,7 +3581,7 @@ app.controller('instructoresJCtrl', function ($scope, $http, $location, user, pe
 	$scope.deleteInstructor = function (id, nombreInstructor) {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/deleteInstructor.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/deleteInstructor.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -3625,7 +3625,7 @@ app.controller('instructoresJCtrl', function ($scope, $http, $location, user, pe
 		/* Valida que el ID no esté vacío */
 		if (instructor.getID() != "") {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getInstructorAct.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getInstructorAct.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -3642,7 +3642,7 @@ app.controller('instructoresJCtrl', function ($scope, $http, $location, user, pe
 	$scope.actualizarInstructor = function () {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/actualizarInstructor.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/actualizarInstructor.php',
 			headers: {
 				'Content-Type': 'application/json'
 			},
@@ -3676,17 +3676,17 @@ app.controller('instructoresJCtrl', function ($scope, $http, $location, user, pe
 	//Formatos
 	/* Archivo excel de indicadores */
 	$scope.printIndicadores = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDpto.php?idd=' + user.getIdDepartamento(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDpto.php?idd=' + user.getIdDepartamento(), '_blank');
 	}
 
 	/* Archivo excel de Indicadores Totales */
 	$scope.printIndicadoresTotales = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDptoTotales.php?idd=' + user.getIdDepartamento(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoIndicadoresDptoTotales.php?idd=' + user.getIdDepartamento(), '_blank');
 	}
 
 	/* Archivo word de Programa Institucional */
 	$scope.printProgramaInstitucional = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucionalDpto.php?idd=' + user.getIdDepartamento(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoProgramaInstitucionalDpto.php?idd=' + user.getIdDepartamento(), '_blank');
 	}
 
 });
@@ -3700,7 +3700,7 @@ app.controller('cursosDCtrl', function ($scope, $http, $location, user, curso, e
 	$scope.getCursos = function () {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/getCursosDocenteDpto.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getCursosDocenteDpto.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -3722,7 +3722,7 @@ app.controller('cursosDCtrl', function ($scope, $http, $location, user, curso, e
 
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/salirCurso.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/salirCurso.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -3763,7 +3763,7 @@ app.controller('cursosDCtrl', function ($scope, $http, $location, user, curso, e
 
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/inscribirCurso.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/inscribirCurso.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -3813,7 +3813,7 @@ app.controller('cursosDCtrl', function ($scope, $http, $location, user, curso, e
 		$scope.id = user.getIdUsuario();
 		if ($scope.id != undefined) {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getMisCursos.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getMisCursos.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -3830,7 +3830,7 @@ app.controller('cursosDCtrl', function ($scope, $http, $location, user, curso, e
 		$scope.id = user.getIdUsuario();
 		if ($scope.id != undefined) {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getMisCursosConcluidos.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getMisCursosConcluidos.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -3846,7 +3846,7 @@ app.controller('cursosDCtrl', function ($scope, $http, $location, user, curso, e
 		if (curso.getID != undefined && user.getIdUsuario() != undefined) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/getAsistenciaUsuarioCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getAsistenciaUsuarioCurso.php',
 				headers: {
 					'Content-type': 'application/x-www-form-urlencoded'
 				},
@@ -3863,7 +3863,7 @@ app.controller('cursosDCtrl', function ($scope, $http, $location, user, curso, e
 		$scope.idCurso = curso.getID();
 		if ($scope.idCurso != undefined) {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getInfoCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getInfoCurso.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -3928,7 +3928,7 @@ app.controller('cursosDCtrl', function ($scope, $http, $location, user, curso, e
 			if (encuesta.getID() == 3) {
 				$http({
 					method: 'POST',
-					url: 'desarrollo.itdurango.edu.mx/php/getFechaEncuesta.php',
+					url: 'http://desarrollo.itdurango.edu.mx/php/getFechaEncuesta.php',
 					headers: {
 						'Content-Type': 'application/x-www-form-urlencoded'
 					},
@@ -3938,7 +3938,7 @@ app.controller('cursosDCtrl', function ($scope, $http, $location, user, curso, e
 						if (encuesta.getID() != undefined) {
 							$http({
 								method: 'POST',
-								url: 'desarrollo.itdurango.edu.mx/php/getPreguntasEncuesta.php',
+								url: 'http://desarrollo.itdurango.edu.mx/php/getPreguntasEncuesta.php',
 								headers: {
 									'Content-Type': 'application/x-www-form-urlencoded'
 								},
@@ -3958,7 +3958,7 @@ app.controller('cursosDCtrl', function ($scope, $http, $location, user, curso, e
 			} else {
 				$http({
 					method: 'POST',
-					url: 'desarrollo.itdurango.edu.mx/php/getPreguntasEncuesta.php',
+					url: 'http://desarrollo.itdurango.edu.mx/php/getPreguntasEncuesta.php',
 					headers: {
 						'Content-Type': 'application/x-www-form-urlencoded'
 					},
@@ -3993,7 +3993,7 @@ app.controller('cursosDCtrl', function ($scope, $http, $location, user, curso, e
 		if (Object.keys($scope.listaRespuestas).length == ($scope.preguntas).length) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/registrarRespuestasEncuesta.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/registrarRespuestasEncuesta.php',
 				headers: {
 					'Content-type': 'json/application'
 				},
@@ -4045,7 +4045,7 @@ app.controller('constanciasDCtrl', function ($scope, $http, $location, user, cur
 		$scope.id = user.getIdUsuario();
 		if ($scope.id != undefined) {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getMisConstancias.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getMisConstancias.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -4071,7 +4071,7 @@ app.controller('constanciasDCtrl', function ($scope, $http, $location, user, cur
 		var folio = constancia.getFolio();
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/getConstancia.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getConstancia.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -4083,7 +4083,7 @@ app.controller('constanciasDCtrl', function ($scope, $http, $location, user, cur
 
 	/* Retorna la URL del documento */
 	$scope.getDocumento = function () {
-		return 'desarrollo.itdurango.edu.mx/files/' + constancia.getRuta();
+		return 'http://desarrollo.itdurango.edu.mx/files/' + constancia.getRuta();
 	};
 
 	$scope.back = function () {
@@ -4115,7 +4115,7 @@ app.controller('cursosICtrl', function ($scope, $http, $timeout, user, curso, pe
 		/* valida que el id no esté vacío */
 		if ($scope.id != undefined) {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getCursosInstructor.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getCursosInstructor.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -4131,7 +4131,7 @@ app.controller('cursosICtrl', function ($scope, $http, $timeout, user, curso, pe
 	$scope.getListaDocumentosCurso = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getDocumentos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getDocumentos.php'
 		}).then(function successCallback(response) {
 			$scope.documentos = response.data;
 		}, function errorCallback(response) {
@@ -4141,13 +4141,13 @@ app.controller('cursosICtrl', function ($scope, $http, $timeout, user, curso, pe
 
 	/*Obtiene plantilla de Currículum con Datos principales del instructor */
 	$scope.printCurriculum = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getCurriculum.php?id=' + user.getIdUsuario(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getCurriculum.php?id=' + user.getIdUsuario(), '_blank');
 	}
 
 	/*Obtiene plantilla de Ficha Técnica del Servicio */
 	$scope.printFicha = function () {
 		$scope.id = curso.getID();
-		window.open('desarrollo.itdurango.edu.mx/php/getFichaTecnica.php?id=' + $scope.id, '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFichaTecnica.php?id=' + $scope.id, '_blank');
 	}
 
 	/* Establece el id del curso */
@@ -4159,7 +4159,7 @@ app.controller('cursosICtrl', function ($scope, $http, $timeout, user, curso, pe
 		$scope.idCurso = curso.getID();
 		if ($scope.idCurso != undefined) {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getInfoCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getInfoCurso.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -4180,7 +4180,7 @@ app.controller('cursosICtrl', function ($scope, $http, $timeout, user, curso, pe
 		fd.append('idDocumento', idDoc);
 		$http({
 			method: 'post',
-			url: 'desarrollo.itdurango.edu.mx/php/subirArchivo.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/subirArchivo.php',
 			data: fd,
 			headers: {
 				'Content-Type': undefined
@@ -4197,7 +4197,7 @@ app.controller('cursosICtrl', function ($scope, $http, $timeout, user, curso, pe
 				});
 				$('#modal' + idDoc).modal('hide');
 				document.getElementById('mensaje' + idDoc).innerHTML = 'Documento guardado';
-				$('#linkDocumento' + idDoc).replaceWith('<span id="linkDocumento' + idDoc + '"><a href="desarrollo.itdurango.edu.mx/files/' + response.data.doc + '" target="_blank">Ver documento</a></span>');
+				$('#linkDocumento' + idDoc).replaceWith('<span id="linkDocumento' + idDoc + '"><a href="http://desarrollo.itdurango.edu.mx/files/' + response.data.doc + '" target="_blank">Ver documento</a></span>');
 			}
 		});
 	}
@@ -4207,7 +4207,7 @@ app.controller('cursosICtrl', function ($scope, $http, $timeout, user, curso, pe
 		$timeout(function () {
 			$http({
 				method: 'post',
-				url: 'desarrollo.itdurango.edu.mx/php/documentosExistentesCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/documentosExistentesCurso.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -4215,7 +4215,7 @@ app.controller('cursosICtrl', function ($scope, $http, $timeout, user, curso, pe
 			}).then(function successCallback(response) {
 				if (response.data.status = "existe") {
 					angular.forEach(response.data.documentos, function (value, key) {
-						$('#linkDocumento' + key).append('<a target="_blank" href="desarrollo.itdurango.edu.mx/files/' + value + '">Ver documento</a>');
+						$('#linkDocumento' + key).append('<a target="_blank" href="http://desarrollo.itdurango.edu.mx/files/' + value + '">Ver documento</a>');
 					});
 					angular.forEach(response.data.comentariosDocumentos, function (value, key) {
 						$("textarea#comentarioDocu" + key).val(value);
@@ -4229,7 +4229,7 @@ app.controller('cursosICtrl', function ($scope, $http, $timeout, user, curso, pe
 		$timeout(function () {
 			$http({
 				method: 'GET',
-				url: 'desarrollo.itdurango.edu.mx/php/numDocsCursos.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/numDocsCursos.php',
 			}).then(function successCallback(response) {
 				angular.forEach(response.data.numDocsCurso, function (value, key) {
 					if (value.num_docs < 7) {
@@ -4242,7 +4242,7 @@ app.controller('cursosICtrl', function ($scope, $http, $timeout, user, curso, pe
 
 	/* Pasa los datos GET para obtener el oficio de creación de un curso */
 	$scope.printOficio = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getOficioRegistro.php?idc=' + $scope.infoCurso.idCurso, '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getOficioRegistro.php?idc=' + $scope.infoCurso.idCurso, '_blank');
 	}
 
 	/* regresa atrás en el navegador */
@@ -4267,7 +4267,7 @@ app.controller('asistenciaICtrl', function ($scope, $http, $location, user, curs
 	$scope.getCursos = function () {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/getCursosDepartamento.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getCursosDepartamento.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -4293,7 +4293,7 @@ app.controller('asistenciaICtrl', function ($scope, $http, $location, user, curs
 		$scope.idCurso = curso.getID();
 		if ($scope.idCurso != "") {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getParticipantes.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getParticipantes.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -4324,7 +4324,7 @@ app.controller('asistenciaICtrl', function ($scope, $http, $location, user, curs
 				idCurso: curso.getID()
 			}
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/addAsistencia.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/addAsistencia.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -4391,19 +4391,19 @@ app.controller('asistenciaICtrl', function ($scope, $http, $location, user, curs
 	/* Abre el Formato de Lista de Asistencia del curso en otra pestaña */
 	$scope.printFormato = function () {
 		$scope.idCurso = curso.getID();
-		window.open('desarrollo.itdurango.edu.mx/php/getFormatoListaAsistencia.php?idc=' + $scope.idCurso, '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getFormatoListaAsistencia.php?idc=' + $scope.idCurso, '_blank');
 	}
 
 	/*Obtiene plantilla de Currículum con Datos principales del instructor */
 	$scope.printCurriculum = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getCurriculum.php?id=' + user.getIdUsuario(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getCurriculum.php?id=' + user.getIdUsuario(), '_blank');
 	}
 
 	$scope.getAsistenciaCurso = function () {
 		if (curso.getID != undefined) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/getAsistenciaCurso.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getAsistenciaCurso.php',
 				headers: {
 					'Content-type': 'application/x-www-form-urlencoded'
 				},
@@ -4431,7 +4431,7 @@ app.controller('reconocimientosICtrl', function ($scope, $http, $location, user,
 		$scope.id = user.getIdUsuario();
 		if ($scope.id != undefined) {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getMisReconocimientos.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getMisReconocimientos.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -4457,7 +4457,7 @@ app.controller('reconocimientosICtrl', function ($scope, $http, $location, user,
 		var folio = constancia.getFolio();
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/getConstancia.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/getConstancia.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -4469,7 +4469,7 @@ app.controller('reconocimientosICtrl', function ($scope, $http, $location, user,
 
 	/* Retorna la URL del documento */
 	$scope.getDocumento = function () {
-		return 'desarrollo.itdurango.edu.mx/files/' + constancia.getRuta();
+		return 'http://desarrollo.itdurango.edu.mx/files/' + constancia.getRuta();
 	};
 
 	$scope.back = function () {
@@ -4482,7 +4482,7 @@ app.controller('reconocimientosICtrl', function ($scope, $http, $location, user,
 
 	/*Obtiene plantilla de Currículum con Datos principales del instructor */
 	$scope.printCurriculum = function () {
-		window.open('desarrollo.itdurango.edu.mx/php/getCurriculum.php?id=' + user.getIdUsuario(), '_blank');
+		window.open('http://desarrollo.itdurango.edu.mx/php/getCurriculum.php?id=' + user.getIdUsuario(), '_blank');
 	}
 
 	/* Llamado a las funciones */
@@ -4504,7 +4504,7 @@ app.controller('usuariosACtrl', function ($scope, $http, $location, user, period
 	$scope.getUsuarios = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getUsuarios.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getUsuarios.php'
 		}).then(function successCallback(response) {
 			$scope.usuarios = response.data;
 		});
@@ -4514,7 +4514,7 @@ app.controller('usuariosACtrl', function ($scope, $http, $location, user, period
 	$scope.getDepartamentos = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getDepartamentos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getDepartamentos.php'
 		}).then(function successCallback(response) {
 			$scope.dptos = response.data;
 		});
@@ -4524,7 +4524,7 @@ app.controller('usuariosACtrl', function ($scope, $http, $location, user, period
 	$scope.getRoles = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getRoles.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getRoles.php'
 		}).then(function successCallback(response) {
 			$scope.roles = response.data;
 		});
@@ -4545,7 +4545,7 @@ app.controller('usuariosACtrl', function ($scope, $http, $location, user, period
 		) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/agregarUsuario.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/agregarUsuario.php',
 				headers: {
 					'Content-Type': 'application/json'
 				},
@@ -4596,7 +4596,7 @@ app.controller('usuariosACtrl', function ($scope, $http, $location, user, period
 	$scope.deleteUsuario = function (id) {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/deleteUsuario.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/deleteUsuario.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -4640,7 +4640,7 @@ app.controller('usuariosACtrl', function ($scope, $http, $location, user, period
 		/* Valida que el ID no esté vacío */
 		if (usuario.getID() != "") {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getUsuarioAct.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getUsuarioAct.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -4657,7 +4657,7 @@ app.controller('usuariosACtrl', function ($scope, $http, $location, user, period
 	$scope.actualizarUsuario = function () {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/actualizarUsuario.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/actualizarUsuario.php',
 			headers: {
 				'Content-Type': 'application/json'
 			},
@@ -4724,7 +4724,7 @@ app.controller('instructoresACtrl', function ($scope, $http, $location, user, pe
 	$scope.getInstructores = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getInstructores.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getInstructores.php'
 		}).then(function successCallback(response) {
 			$scope.instructores = response.data;
 		});
@@ -4736,7 +4736,7 @@ app.controller('instructoresACtrl', function ($scope, $http, $location, user, pe
 	$scope.getDepartamentos = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getDepartamentos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getDepartamentos.php'
 		}).then(function successCallback(response) {
 			$scope.dptos = response.data;
 		});
@@ -4763,7 +4763,7 @@ app.controller('instructoresACtrl', function ($scope, $http, $location, user, pe
 		) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/agregarInstructor.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/agregarInstructor.php',
 				headers: {
 					'Content-Type': 'application/json'
 				},
@@ -4814,7 +4814,7 @@ app.controller('instructoresACtrl', function ($scope, $http, $location, user, pe
 	$scope.deleteInstructor = function (id, nombreInstructor) {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/deleteInstructor.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/deleteInstructor.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -4858,7 +4858,7 @@ app.controller('instructoresACtrl', function ($scope, $http, $location, user, pe
 		/* Valida que el ID no esté vacío */
 		if (instructor.getID() != "") {
 			$http({
-				url: 'desarrollo.itdurango.edu.mx/php/getInstructorAct.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getInstructorAct.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -4875,7 +4875,7 @@ app.controller('instructoresACtrl', function ($scope, $http, $location, user, pe
 	$scope.actualizarInstructor = function () {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/actualizarInstructor.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/actualizarInstructor.php',
 			headers: {
 				'Content-Type': 'application/json'
 			},
@@ -4922,7 +4922,7 @@ app.controller('departamentosACtrl', function ($scope, $http, $location, user, p
 	$scope.getUsuarios = function () {
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getUsuariosDis.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getUsuariosDis.php'
 		}).then(function successCallback(response) {
 			$scope.usuarios = response.data;
 		});
@@ -4933,7 +4933,7 @@ app.controller('departamentosACtrl', function ($scope, $http, $location, user, p
 
 		$http({
 			method: 'GET',
-			url: 'desarrollo.itdurango.edu.mx/php/getDepartamentos.php'
+			url: 'http://desarrollo.itdurango.edu.mx/php/getDepartamentos.php'
 		}).then(function successCallback(response) {
 			$scope.dptos = response.data;
 		});
@@ -4944,7 +4944,7 @@ app.controller('departamentosACtrl', function ($scope, $http, $location, user, p
 		if (datos.nombreDpto != undefined && datos.usuario != undefined) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/agregarDepartamento.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/agregarDepartamento.php',
 				headers: {
 					'Content-Type': 'application/json'
 				},
@@ -4993,7 +4993,7 @@ app.controller('departamentosACtrl', function ($scope, $http, $location, user, p
 	$scope.deleteDepartamento = function (id, nombreDepartamento) {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/deleteDepartamento.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/deleteDepartamento.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -5037,7 +5037,7 @@ app.controller('departamentosACtrl', function ($scope, $http, $location, user, p
 		/* Valida que el ID no esté vacío */
 		if (departamento.getID() != undefined) {
 			// $http({
-			// 	url: 'desarrollo.itdurango.edu.mx/php/getDepartamentoAct.php',
+			// 	url: 'http://desarrollo.itdurango.edu.mx/php/getDepartamentoAct.php',
 			// 	method: 'POST',
 			// 	headers: {
 			// 		'Content-Type': 'application/x-www-form-urlencoded'
@@ -5053,7 +5053,7 @@ app.controller('departamentosACtrl', function ($scope, $http, $location, user, p
 	/* Realizar la modificación de los datos del departamento */
 	$scope.actualizarDepartamento = function (data) {
 		$http({
-			url: 'desarrollo.itdurango.edu.mx/php/actualizarDepartamento.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/actualizarDepartamento.php',
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -5088,7 +5088,7 @@ app.controller('departamentosACtrl', function ($scope, $http, $location, user, p
 	$scope.actualizarInstructor = function () {
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/actualizarInstructor.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/actualizarInstructor.php',
 			headers: {
 				'Content-Type': 'application/json'
 			},
@@ -5129,7 +5129,7 @@ app.controller('encuestasACtrl', function ($scope, $http, $timeout) {
 		$timeout(function () {
 			$http({
 				method: 'GET',
-				url: 'desarrollo.itdurango.edu.mx/php/getEncuestas.php'
+				url: 'http://desarrollo.itdurango.edu.mx/php/getEncuestas.php'
 			}).then(function successCallback(response) {
 				$scope.encuestas = response.data;
 			});
@@ -5150,7 +5150,7 @@ app.controller('encuestasACtrl', function ($scope, $http, $timeout) {
 			}
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/getPreguntasEncuesta.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/getPreguntasEncuesta.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -5170,7 +5170,7 @@ app.controller('encuestasACtrl', function ($scope, $http, $timeout) {
 
 		$http({
 			method: 'POST',
-			url: 'desarrollo.itdurango.edu.mx/php/actPregunta.php',
+			url: 'http://desarrollo.itdurango.edu.mx/php/actPregunta.php',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -5208,7 +5208,7 @@ app.controller('encuestasACtrl', function ($scope, $http, $timeout) {
 			var enc = $scope.encuesta.id;
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/addPreguntaEncuesta.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/addPreguntaEncuesta.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -5244,7 +5244,7 @@ app.controller('encuestasACtrl', function ($scope, $http, $timeout) {
 		if (idp != undefined) {
 			$http({
 				method: 'POST',
-				url: 'desarrollo.itdurango.edu.mx/php/eliminarPreguntaEncuesta.php',
+				url: 'http://desarrollo.itdurango.edu.mx/php/eliminarPreguntaEncuesta.php',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},

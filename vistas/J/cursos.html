@@ -1,7 +1,7 @@
 <ng-include src="'/actdoc/vistas/J/nav.html'"></ng-include>
 <div class="container" ng-init="faltaDocumentacion()">
     <div class="programa_page d-flex justify-content-center">
-        <div class="p-2"><img src="http://localhost/actdoc/images/Logo ITD.png" alt="logo ITD" class="logoITD"></div>
+        <div class="p-2"><img src="http://desarrollo.itdurango.edu.mx/images/Logo ITD.png" alt="logo ITD" class="logoITD"></div>
         <div class="p-4">
             <div class="text-center">
                 <h1>Periodo {{periodo}}</h1>
@@ -37,7 +37,7 @@
                 <tr ng-repeat="x in cursos">
                     <th scope="row" class=" align-middle ">
                         <span id="documentacion{{x.idCurso}}"></span>
-                        <img ng-src="http://localhost/actdoc/images/{{x.validado}}.png"
+                        <img ng-src="http://desarrollo.itdurango.edu.mx/images/{{x.validado}}.png"
                             title="estado de validacion del curso">
                     </th>
                     <td class=" align-middle "> {{x.maestro}} </td>
