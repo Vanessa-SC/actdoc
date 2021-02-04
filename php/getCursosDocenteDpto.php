@@ -48,20 +48,11 @@ $sql = "SELECT curso.idCurso,
         AND YEAR(curso.fechaInicio) = $año
         AND curso.Departamento_idDepartamento = '$id' 
         AND curso.validado='SI'
-        UNION 
-        SELECT curso.idCurso,
-                concat_ws(' ',instructor.apellidoPaterno,instructor.apellidoMaterno,instructor.nombre) as maestro,
-                curso.nombreCurso as curso,
-                curso.objetivo,
-                concat_ws(' - ', DATE_FORMAT(curso.fechaInicio, '%d de %M'), DATE_FORMAT(curso.fechaFin, '%d de %M, %Y')) as fecha,
-                concat_ws(' a ',curso.horaInicio,curso.horaFin) as horario,
-                curso.validado
-        FROM instructor 
-        Inner join curso
-        ON curso.Instructor_idInstructor=instructor.idInstructor             
+        OR( curso.Instructor_idInstructor=instructor.idInstructor             
         AND curso.Departamento_idDepartamento = '$dpto[0]'
-        AND curso.validado='SI' 
+        AND curso.validado='SI')
         ";
+
 
 // Validación de ejecución de la consulta
 $result = $conn->query($sql) or die($conn->error . __LINE__);
