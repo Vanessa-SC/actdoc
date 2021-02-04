@@ -14,7 +14,7 @@
             <thead class="bg-wine text-white">
                 <tr>
                     <td></td>
-                    <td class="align-middle font-italic" colspan="2">Curso</td>
+                    <td class="align-middle font-italic">Curso</td>
                     <td class="align-middle font-italic">Periodo de realizaci&oacute;n</td>
                     <td class="align-middle font-italic text-sm">Subir documentaci&oacute;n</td>
                     <td class="align-middle font-italic">Registrar asistencia</td>
@@ -23,14 +23,17 @@
             </thead>
             <tbody>
                 <tr ng-repeat="x in cursos">
-                    <td scope="row" class=" align-middle ">
-                        <span id="documentacion{{x.idCurso}}"></span>
+                    <td><span id="documentacion{{x.idCurso}}"></span></td>
+                    <td>
+                        <a class="text-decoration-none " href="#!/inicioI/cursos/infoCurso" ng-click=cursoID(x.idCurso)
+                            title="Ver más">{{x.curso}}</a>
                     </td>
-                    <td><a class="text-decoration-none " href="#!/inicioI/cursos/infoCurso" ng-click=cursoID(x.idCurso)
-                            title="Ver más">{{x.curso}}</a></td>
                     <td>{{x.fecha}} <br> {{x.horario}}</td>
-                    <td class=" align-middle "><a href="#!/inicioI/subirDocumentos" ng-click=cursoID(x.idCurso)><button
-                                class="btn bg-white subirDocumento_icon"></button></a></td>
+                    <td class=" align-middle ">
+                        <a href="#!/inicioI/subirDocumentos" ng-click=cursoID(x.idCurso)>
+                            <button class="btn bg-white subirDocumento_icon"></button>
+                        </a>
+                    </td>
                     <td class=" align-middle ">
                         <a href="#!/inicioI/asistencia" ng-click=cursoID(x.idCurso)>
                             <button class="btn bg-white calendario_icon"></button>
@@ -45,7 +48,7 @@
             </tbody>
             <tbody ng-show="cursos | isEmpty">
                 <tr class="text-center">
-                    <td colspan="7" class=" py-4 m-auto bg-light font-italic">
+                    <td colspan="5" class=" py-4 m-auto bg-light font-italic">
                         <h5>No hay cursos asignados</h5>
                     </td>
                 </tr>

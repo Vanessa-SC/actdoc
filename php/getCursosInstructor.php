@@ -23,6 +23,7 @@ $sql = "SELECT curso.idCurso, curso.nombreCurso AS curso,
         curso.objetivo, curso.Instructor_idInstructor, curso.periodo,
         concat_ws(' - ', DATE_FORMAT(curso.fechaInicio, '%d de %M'), DATE_FORMAT(curso.fechaFin, '%d de %M, %Y')) AS fecha, 
         concat_ws(' - ',curso.horaInicio,curso.horaFin) AS horario, 
+        curso.fechaFin,
         curso.lugar,curso.duracion,curso.destinatarios, curso.validado
         FROM instructor INNER JOIN curso 
         ON curso.Instructor_idInstructor = instructor.idInstructor
@@ -31,7 +32,7 @@ $sql = "SELECT curso.idCurso, curso.nombreCurso AS curso,
         WHERE usuario.idUsuario = $id
         AND YEAR(curso.fechaFin) = $año
         AND MONTH(curso.fechaFin) <= $mes
-        AND DAY(curso.fechaFin) <= $dia
+        AND DAY(curso.fechaFin) >= $dia
         ORDER BY fechaInicio ASC
         ";
 // Validación de ejecución de la consulta
