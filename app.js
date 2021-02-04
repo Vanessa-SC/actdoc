@@ -2593,10 +2593,18 @@ app.controller('encuestasCtrl', function ($scope, $http, user, periodoService, c
 	}
 
 	$scope.cargarDatos = function (enc) {
+		
 		var ide = enc.id;
 		encuesta.setID(ide);
 		$scope.nombreEncuesta = enc.nombreEncuesta;
 		if (ide != undefined) {
+
+			$scope.ResLength = 0;
+				/** reinicializacion */
+				$scope.idPreguntas = [];
+				$scope.resultados = [];
+
+				
 			$scope.getPreguntasEncuesta(ide);
 			$scope.getResultadosEncuesta(ide);
 
