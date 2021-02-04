@@ -44,7 +44,6 @@ $sexo = $conn->query("SELECT
         AND u.rol = 3
         AND uc.estado = 0
         AND c. periodo LIKE '$response%'
-        AND YEAR(c.fechaInicio) = $año
         group by u.sexo
         ");
 
@@ -71,7 +70,6 @@ $contrato = $conn->query("SELECT
         AND u.rol = 3
         AND uc.estado = 0
         AND c. periodo LIKE '$response%'
-        AND YEAR(c.fechaInicio) = $año
         group by u.contrato
         ");
 
@@ -98,7 +96,6 @@ $horas = $conn->query("SELECT
         AND u.rol = 3
         AND uc.estado = 0
         AND c. periodo LIKE '$response%'
-        AND YEAR(c.fechaInicio) = $año
         group by u.horas
         ");
 
@@ -125,7 +122,6 @@ $nivel = $conn->query("SELECT
         AND u.rol = 3
         AND uc.estado = 0
         AND c. periodo LIKE '$response%'
-        AND YEAR(c.fechaInicio) = $año
         group by u.nivel
         ");
 
@@ -152,7 +148,6 @@ $perfilDeseable = $conn->query("SELECT
         AND u.rol = 3
         AND uc.estado = 0
         AND c. periodo LIKE '$response%'
-        AND YEAR(c.fechaInicio) = $año
         group by u.perfilDeseable
         ");
 
@@ -172,14 +167,13 @@ if($perfilDeseable->num_rows > 0) {
 
 // Consulta para obtener la funcionAdministrativa
 $funcionAdministrativa = $conn->query("SELECT
-        u.funcionAdministrativa,count(distinct u.idUsuario) as usuarios 
+        u.funcionAdministrativa, count(distinct u.idUsuario) as usuarios 
         FROM usuario u, usuario_has_curso uc, curso c
         WHERE u.idUsuario = uc.Usuario_idUsuario
         AND c.idCurso = uc.Curso_idCurso
         AND u.rol = 3
         AND uc.estado = 0
         AND c. periodo LIKE '$response%'
-        AND YEAR(c.fechaInicio) = $año
         group by u.funcionAdministrativa
         ");
 

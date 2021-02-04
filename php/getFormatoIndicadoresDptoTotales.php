@@ -47,7 +47,6 @@ $sexo = $conn->query("SELECT
         AND u.rol = 3
         AND uc.estado = 0
         AND c. periodo LIKE '$response%'
-        AND YEAR(c.fechaInicio) = $año
         AND c.Departamento_idDepartamento = $idDpto
         group by u.sexo
         ");
@@ -75,7 +74,6 @@ $contrato = $conn->query("SELECT
         AND u.rol = 3
         AND uc.estado = 0
         AND c. periodo LIKE '$response%'
-        AND YEAR(c.fechaInicio) = $año
         AND c.Departamento_idDepartamento = $idDpto
         group by u.contrato
         ");
@@ -103,7 +101,6 @@ $horas = $conn->query("SELECT
         AND u.rol = 3
         AND uc.estado = 0
         AND c. periodo LIKE '$response%'
-        AND YEAR(c.fechaInicio) = $año
         AND c.Departamento_idDepartamento = $idDpto
         group by u.horas
         ");
@@ -131,7 +128,6 @@ $nivel = $conn->query("SELECT
         AND u.rol = 3
         AND uc.estado = 0
         AND c. periodo LIKE '$response%'
-        AND YEAR(c.fechaInicio) = $año
         AND c.Departamento_idDepartamento = $idDpto
         group by u.nivel
         ");
@@ -159,7 +155,6 @@ $perfilDeseable = $conn->query("SELECT
         AND u.rol = 3
         AND uc.estado = 0
         AND c. periodo LIKE '$response%'
-        AND YEAR(c.fechaInicio) = $año
         AND c.Departamento_idDepartamento = $idDpto
         group by u.perfilDeseable
         ");
@@ -187,7 +182,6 @@ $funcionAdministrativa = $conn->query("SELECT
         AND u.rol = 3
         AND uc.estado = 0
         AND c. periodo LIKE '$response%'
-        AND YEAR(c.fechaInicio) = $año
         AND c.Departamento_idDepartamento = $idDpto
         group by u.funcionAdministrativa
         ");

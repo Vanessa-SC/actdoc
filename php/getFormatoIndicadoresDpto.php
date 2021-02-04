@@ -68,7 +68,6 @@ $query = $conn->query("SELECT
         WHERE usuario.rol = 3
         AND usuario_has_curso.estado = 0
         AND curso.periodo LIKE '$response%'
-        AND YEAR(curso.fechaInicio) = $año
         AND curso.Departamento_idDepartamento = $idDpto
         GROUP BY curso.nombreCurso
         ");
