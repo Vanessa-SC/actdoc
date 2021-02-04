@@ -2573,7 +2573,6 @@ app.controller('encuestasCtrl', function ($scope, $http, user, periodoService, c
 	}
 
 	$scope.getResultadosEncuesta = function (ide) {
-		console.log(ide);
 		if (ide != undefined) {
 			$http({
 				method: 'POST',
@@ -2610,9 +2609,6 @@ app.controller('encuestasCtrl', function ($scope, $http, user, periodoService, c
 
 			$scope.labels = $scope.idPreguntas;
 			$scope.data = $scope.resultados;
-
-			console.log($scope.labels);
-			console.log($scope.data);
 
 			// $('#exportResultados').attr('disabled', false);
 		}
