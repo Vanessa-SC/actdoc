@@ -1689,7 +1689,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 			}).then(function successCallback(response) {
 				if (response.data.status = "existe") {
 					angular.forEach(response.data.documentos, function (value, key) {
-						$('#linkDocumento' + key).append('<a target="_blank" href="files/' + value + '">Ver documento</a>');
+						$('#linkDocumento' + value.id).append('<a target="_blank" href="files/' + value.doc + '">Ver documento</a>');
 					});
 				}
 			});
@@ -1812,6 +1812,7 @@ app.controller('programaCtrl', function ($scope, $http, $location, user, curso, 
 					},
 					data: 'idc=' + curso.getID()
 				}).then(function successCallback(response) {
+					console.log(response.data);
 					/* Si la documentación del curso ya está aprobada
 					   y el curso aún no, se nos muestra una alerta para
 					   que lo hagamos */
@@ -2772,7 +2773,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 			}).then(function successCallback(response) {
 				if (response.data.status = "existe") {
 					angular.forEach(response.data.documentos, function (value, key) {
-						$('#linkDocumento' + key).append('<a target="_blank" href="files/' + value + '">Ver documento</a>');
+						$('#linkDocumento' + value.id).append('<a target="_blank" href="files/' + value.doc + '">Ver documento</a>');
 					});
 				}
 			});
@@ -3026,7 +3027,7 @@ app.controller('cursosJCtrl', function ($scope, $http, $location, user, curso, p
 			}).then(function successCallback(response) {
 				if (response.data.status = "existe") {
 					angular.forEach(response.data.documentos, function (value, key) {
-						$('#linkDocumento' + key).append('<a target="_blank" href="files/' + value + '">Ver documento</a>');
+						$('#linkDocumento' + value.id).append('<a target="_blank" href="files/' + value.doc + '">Ver documento</a>');
 					});
 				}
 			});
@@ -4219,7 +4220,7 @@ app.controller('cursosICtrl', function ($scope, $http, $timeout, user, curso, pe
 			}).then(function successCallback(response) {
 				if (response.data.status = "existe") {
 					angular.forEach(response.data.documentos, function (value, key) {
-						$('#linkDocumento' + key).append('<a target="_blank" href="files/' + value + '">Ver documento</a>');
+						$('#linkDocumento' + value.id).append('<a target="_blank" href="files/' + value.doc + '">Ver documento</a>');
 					});
 					angular.forEach(response.data.comentariosDocumentos, function (value, key) {
 						$("textarea#comentarioDocu" + key).val(value);
@@ -4228,6 +4229,7 @@ app.controller('cursosICtrl', function ($scope, $http, $timeout, user, curso, pe
 			});
 		}, 500);
 	}
+
 	/* Consulta si falta documentación de cada curso */
 	$scope.faltaDocumentacion = function () {
 		$timeout(function () {

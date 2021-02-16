@@ -43,7 +43,8 @@ if ($result->num_rows > 0) {
     for ($i = 0; $i <= max($keyDocs); $i++) {
 
         /* Almacenamos la ruta de los documentos individuales */
-        $response['documentos'][$i+1] = $docs[$i]['rutaArchivo'];
+        $response['documentos'][$i+1]['doc'] = $docs[$i]['rutaArchivo'];
+        $response['documentos'][$i+1]['id'] = $docs[$i]['idDocumento'];
         $response['comentariosDocumentos'][$i+1] = $docs[$i]['comentario'];
 
     }
